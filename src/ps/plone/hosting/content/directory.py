@@ -8,9 +8,9 @@ from zope.interface import implementer
 
 
 class IDirectory(model.Schema):
-    """Interface for Directory content type."""
+    """Interface for the `Hosting Directory` content type."""
 
 
 @implementer(IDirectory)
 class Directory(Container):
-    """Directory content type"""
+    """`Hosting Directory` content type."""
