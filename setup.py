@@ -13,6 +13,7 @@ long_description = ('\n'.join([
 install_requires = [
     'setuptools',
     # -*- Extra requirements: -*-
+    'plone.api',
 ]
 
 setup(
@@ -47,7 +48,9 @@ setup(
     zip_safe=False,
     extras_require=dict(
         test=[
+            'plone.app.robotframework',
             'plone.app.testing',
+            'robotframework-selenium2screenshots',
         ],
     ),
     install_requires=install_requires,
