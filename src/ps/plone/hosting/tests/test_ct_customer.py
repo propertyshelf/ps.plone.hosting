@@ -12,6 +12,7 @@ from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import createObject, queryUtility
 
 # local imports
+from ps.plone.hosting import behaviors
 from ps.plone.hosting.content.customer import ICustomer
 from ps.plone.hosting.testing import INTEGRATION_TESTING
 
@@ -64,3 +65,4 @@ class CustomerIntegrationTestCase(unittest.TestCase):
     def test_behaviors(self):
         """Validate that the required behaviors are available."""
         self.assertTrue(INameFromTitle.providedBy(self.ct))
+        self.assertTrue(behaviors.IContactDetails.providedBy(self.ct))
