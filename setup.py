@@ -15,6 +15,7 @@ install_requires = [
     # -*- Extra requirements: -*-
     'plone.api',
     'plone.app.dexterity',
+    'plone.app.versioningbehavior',
 ]
 
 setup(
