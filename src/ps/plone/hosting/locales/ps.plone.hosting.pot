@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ps.plone.hosting\n"
-"POT-Creation-Date: 2014-09-22 09:54+0000\n"
+"POT-Creation-Date: 2014-09-22 10:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,6 +48,14 @@ msgstr ""
 
 #: ps/plone/hosting/content/customer.py:19
 msgid "Display Name"
+msgstr ""
+
+#: ps/plone/hosting/profiles/default/types/ps.plone.hosting.domain.xml
+msgid "Domain"
+msgstr ""
+
+#: ps/plone/hosting/content/domain.py:19
+msgid "Domain Name"
 msgstr ""
 
 #: ps/plone/hosting/behaviors.py:67
