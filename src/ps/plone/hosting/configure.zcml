@@ -18,6 +18,7 @@
   <includeDependencies package="." />
   <include package=".browser" />
   <include package=".content" />
+  <include file="behaviors.zcml" />
   <include file="profiles.zcml" />
 
 

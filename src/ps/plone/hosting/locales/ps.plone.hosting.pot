@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ps.plone.hosting\n"
-"POT-Creation-Date: 2014-09-22 08:34+0000\n"
+"POT-Creation-Date: 2014-09-22 09:54+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,6 +14,34 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: ps.plone.hosting\n"
 
+#: ps/plone/hosting/behaviors.py:117
+msgid "Additional address details"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:46
+msgid "Address"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:77
+msgid "Cell Phone"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:97
+msgid "City/Town"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:62
+msgid "Company"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:41
+msgid "Contact Details"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:112
+msgid "Country"
+msgstr ""
+
 #: ps/plone/hosting/profiles/default/types/ps.plone.hosting.customer.xml
 msgid "Customer"
 msgstr ""
@@ -22,15 +50,51 @@ msgstr ""
 msgid "Display Name"
 msgstr ""
 
+#: ps/plone/hosting/behaviors.py:67
+msgid "Email"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:82
+msgid "Fax"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:57
+msgid "Firstname"
+msgstr ""
+
 #: ps/plone/hosting/profiles/default/types/ps.plone.hosting.directory.xml
 msgid "Hosting Directory"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:52
+msgid "Lastname"
 msgstr ""
 
 #: Profile description in profiles.zcml
 msgid "Manage customers, domains and hosting services."
 msgstr ""
 
+#: ps/plone/hosting/behaviors.py:72
+msgid "Phone"
+msgstr ""
+
 #: Profile title in profiles.zcml
 msgid "Propertyshelf Hosting Management"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:102
+msgid "Region"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:92
+msgid "Street"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:87
+msgid "Website"
+msgstr ""
+
+#: ps/plone/hosting/behaviors.py:107
+msgid "ZIP"
 msgstr ""
 

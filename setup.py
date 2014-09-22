@@ -16,6 +16,7 @@ install_requires = [
     'plone.api',
     'plone.app.dexterity',
     'plone.app.versioningbehavior',
+    'plone.behavior',
 ]
 
 setup(
