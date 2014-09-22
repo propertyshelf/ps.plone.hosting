@@ -6,7 +6,7 @@
   <!-- =============== -->
   <property name="title" i18n:translate="">Hosting Directory</property>
   <property name="description" i18n:translate=""></property>
-  <property name="icon_expr">string:${portal_url}/folder_icon.png</property>
+  <property name="icon_expr">string:${portal_url}/navigation_icon.png</property>
   <property name="factory">ps.plone.hosting.content.directory</property>
   <property name="add_view_expr">string:${folder_url}/++add++ps.plone.hosting.directory</property>
   <property name="link_target"></property>
