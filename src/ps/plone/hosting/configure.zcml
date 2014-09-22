@@ -16,6 +16,7 @@
   <!-- Include package dependencies. -->
   <!-- ============================= -->
   <includeDependencies package="." />
+  <include package=".browser" />
   <include file="profiles.zcml" />
 
 

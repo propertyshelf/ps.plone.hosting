@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<layers>
+  <layer
+      interface="ps.plone.hosting.browser.interfaces.IPloneHostingLayer"
+      name="ps.plone.hosting"
+      />
+</layers>
