@@ -17,6 +17,8 @@ install_requires = [
     'plone.app.dexterity',
     'plone.app.versioningbehavior',
     'plone.behavior',
+    'plone.formwidget.datetime',
+    'z3c.form',
 ]
 
 setup(
