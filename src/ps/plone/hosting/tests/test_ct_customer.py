@@ -7,6 +7,7 @@ import unittest2 as unittest
 # zope imports
 from Products.CMFCore.utils import getToolByName
 from plone import api
+from plone.app.content.interfaces import INameFromTitle
 from plone.dexterity.interfaces import IDexterityFTI
 from zope.component import createObject, queryUtility
 
@@ -62,4 +63,4 @@ class CustomerIntegrationTestCase(unittest.TestCase):
 
     def test_behaviors(self):
         """Validate that the required behaviors are available."""
-        pass
+        self.assertTrue(INameFromTitle.providedBy(self.ct))
