@@ -4,4 +4,5 @@
     <object name="ps.plone.hosting.customer" meta_type="Dexterity FTI"/>
     <object name="ps.plone.hosting.directory" meta_type="Dexterity FTI"/>
     <object name="ps.plone.hosting.domain" meta_type="Dexterity FTI"/>
+    <object name="ps.plone.hosting.hosting" meta_type="Dexterity FTI"/>
 </object>

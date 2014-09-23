@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ps.plone.hosting\n"
-"POT-Creation-Date: 2014-09-22 13:54+0000\n"
+"POT-Creation-Date: 2014-09-22 14:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,6 +46,10 @@ msgstr ""
 msgid "Customer"
 msgstr ""
 
+#: ps/plone/hosting/content/hosting.py:62
+msgid "Description"
+msgstr ""
+
 #: ps/plone/hosting/content/customer.py:19
 msgid "Display Name"
 msgstr ""
@@ -74,12 +78,28 @@ msgstr ""
 msgid "Hosting Directory"
 msgstr ""
 
+#: ps/plone/hosting/content/hosting.py:35
+msgid "Hosting Display Name"
+msgstr ""
+
+#: ps/plone/hosting/profiles/default/types/ps.plone.hosting.hosting.xml
+msgid "Hosting Service"
+msgstr ""
+
+#: ps/plone/hosting/content/hosting.py:52
+msgid "Hosting URL"
+msgstr ""
+
 #: ps/plone/hosting/behaviors.py:52
 msgid "Lastname"
 msgstr ""
 
 #: Profile description in profiles.zcml
 msgid "Manage customers, domains and hosting services."
+msgstr ""
+
+#: ps/plone/hosting/content/hosting.py:57
+msgid "Management URL"
 msgstr ""
 
 #: ps/plone/hosting/behaviors.py:72
@@ -98,8 +118,16 @@ msgstr ""
 msgid "Registration Date"
 msgstr ""
 
+#: ps/plone/hosting/content/hosting.py:47
+msgid "Start Date"
+msgstr ""
+
 #: ps/plone/hosting/behaviors.py:92
 msgid "Street"
+msgstr ""
+
+#: ps/plone/hosting/content/hosting.py:40
+msgid "Type of Hosting"
 msgstr ""
 
 #: ps/plone/hosting/behaviors.py:87
