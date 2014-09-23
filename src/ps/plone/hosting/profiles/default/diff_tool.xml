@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<object>
+  <difftypes>
+    <type portal_type="ps.plone.hosting.customer">
+      <field name="any" difftype="Compound Diff for Dexterity types"/>
+    </type>
+    <type portal_type="ps.plone.hosting.domain">
+      <field name="any" difftype="Compound Diff for Dexterity types"/>
+    </type>
+    <type portal_type="ps.plone.hosting.hosting">
+      <field name="any" difftype="Compound Diff for Dexterity types"/>
+    </type>
+  </difftypes>
+</object>
