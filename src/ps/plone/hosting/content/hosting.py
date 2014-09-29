@@ -7,9 +7,11 @@ import datetime
 # zope imports
 from plone.autoform import directives
 from plone.dexterity.content import Container
+from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone.formwidget.datetime.z3cform import DateWidget
 from plone.supermodel import model
 from z3c.form.widget import FieldWidget
+from z3c.relationfield.schema import RelationList
 from zope import schema
 from zope.interface import implementer
 
@@ -60,6 +62,21 @@ class IHosting(model.Schema):
     description = schema.Text(
         required=False,
         title=_(u'Description'),
+    )
+
+    domains = RelationList(
+        description=_(
+            u'Search and attach domains connected to this hosting service.'
+        ),
+        required=False,
+        title=_('Domains'),
+        value_type=schema.Choice(
+            source=ObjPathSourceBinder(
+                portal_type=[
+                    'ps.plone.hosting.domain',
+                ],
+            ),
+        ),
     )
 
 
