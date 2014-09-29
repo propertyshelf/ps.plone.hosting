@@ -10,6 +10,15 @@
     </type>
   </bindings>
 
+  <!-- Contact. -->
+  <!-- ======== -->
+  <object name="contact_workflow" meta_type="Workflow" />
+  <bindings>
+    <type type_id="ps.plone.hosting.contact">
+      <bound-workflow workflow_id="contact_workflow" />
+    </type>
+  </bindings>
+
   <!-- Customer. -->
   <!-- ========= -->
   <object name="customer_workflow" meta_type="Workflow" />

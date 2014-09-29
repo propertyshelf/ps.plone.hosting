@@ -1,34 +1,30 @@
 <?xml version="1.0"?>
-<object name="ps.plone.hosting.customer" meta_type="Dexterity FTI" i18n:domain="ps.plone.hosting"
+<object name="ps.plone.hosting.contact" meta_type="Dexterity FTI" i18n:domain="ps.plone.hosting"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic metadata. -->
   <!-- =============== -->
-  <property name="title" i18n:translate="">Customer</property>
+  <property name="title" i18n:translate="">Contact</property>
   <property name="description" i18n:translate=""></property>
-  <property name="icon_expr">string:${portal_url}/group.png</property>
-  <property name="factory">ps.plone.hosting.content.customer</property>
-  <property name="add_view_expr">string:${folder_url}/++add++ps.plone.hosting.customer</property>
+  <property name="icon_expr">string:${portal_url}/user.png</property>
+  <property name="factory">ps.plone.hosting.content.contact</property>
+  <property name="add_view_expr">string:${folder_url}/++add++ps.plone.hosting.contact</property>
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
   <property name="global_allow">False</property>
   <property name="filter_content_types">True</property>
-  <property name="allowed_content_types">
-    <element value="ps.plone.hosting.contact" />
-    <element value="ps.plone.hosting.domain" />
-    <element value="ps.plone.hosting.hosting" />
-  </property>
+  <property name="allowed_content_types"></property>
   <property name="allow_discussion">False</property>
 
   <!-- Schema definition. -->
   <!-- ================== -->
-  <property name="schema">ps.plone.hosting.content.customer.ICustomer</property>
+  <property name="schema">ps.plone.hosting.content.contact.IContact</property>
   <property name="model_source"></property>
   <property name="model_file"></property>
 
   <!-- Class used for content items. -->
   <!-- ============================= -->
-  <property name="klass">ps.plone.hosting.content.customer.Customer</property>
+  <property name="klass">ps.plone.hosting.content.contact.Contact</property>
 
   <!-- Add permission. -->
   <!-- =============== -->
@@ -38,7 +34,6 @@
   <!-- ================== -->
   <property name="behaviors">
     <element value="ps.plone.hosting.behaviors.IContactDetails" />
-    <element value="ps.plone.quickbooks.behaviors.IQuickbooks" />
     <element value="plone.app.content.interfaces.INameFromTitle" />
     <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
   </property>

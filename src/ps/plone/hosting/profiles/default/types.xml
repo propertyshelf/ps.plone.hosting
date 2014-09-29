@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <object name="portal_types" meta_type="Plone Types Tool">
   <property name="title">Controls the available content types in your portal</property>
+    <object name="ps.plone.hosting.contact" meta_type="Dexterity FTI"/>
     <object name="ps.plone.hosting.customer" meta_type="Dexterity FTI"/>
     <object name="ps.plone.hosting.directory" meta_type="Dexterity FTI"/>
     <object name="ps.plone.hosting.domain" meta_type="Dexterity FTI"/>
