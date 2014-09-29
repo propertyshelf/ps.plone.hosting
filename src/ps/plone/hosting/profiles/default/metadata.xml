@@ -6,5 +6,6 @@
     <dependency>profile-plone.app.intid:default</dependency>
     <dependency>profile-plone.app.versioningbehavior:default</dependency>
     <dependency>profile-plone.formwidget.contenttree:default</dependency>
+    <dependency>profile-plone.formwidget.masterselect:default</dependency>
   </dependencies>
 </metadata>

@@ -8,6 +8,7 @@ import datetime
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.formwidget.datetime.z3cform import DateWidget
+from plone.formwidget.masterselect import MasterSelectBoolField
 from plone.supermodel import model
 from z3c.form.widget import FieldWidget
 from zope import schema
@@ -41,9 +42,18 @@ class IDomain(model.Schema):
         title=(u'External Hosted Domain'),
     )
 
-    external_managed = schema.Bool(
+    external_managed = MasterSelectBoolField(
         description=_(u'Is this domain managed by another domain server?'),
         required=False,
+        slave_fields=(
+            {
+                'masterID': 'form-widgets-external_managed-0',
+                'name': 'external_dns',
+                'action': 'show',
+                'hide_values': 1,
+                'siblings': True,
+            },
+        ),
         title=(u'External Domain Management'),
     )
 
