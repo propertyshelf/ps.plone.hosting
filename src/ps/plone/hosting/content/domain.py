@@ -35,6 +35,27 @@ class IDomain(model.Schema):
         title=_(u'Domain Name')
     )
 
+    external_hosted = schema.Bool(
+        description=_(u'Is this domain hosted by another registrar?'),
+        required=False,
+        title=(u'External Hosted Domain'),
+    )
+
+    external_managed = schema.Bool(
+        description=_(u'Is this domain managed by another domain server?'),
+        required=False,
+        title=(u'External Domain Management'),
+    )
+
+    external_dns = schema.List(
+        description=_(u'List of external DNS servers.'),
+        required=False,
+        title=_(u'External DNS servers'),
+        value_type=schema.TextLine(
+            title=_(u'DNS Server'),
+        ),
+    )
+
     directives.widget(registration_date=DateFieldWidget)
     registration_date = schema.Date(
         required=True,
