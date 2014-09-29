@@ -14,11 +14,11 @@ from ps.plone.hosting import _
 
 ADDRESS_FIELDS = (
     'street',
+    'additional_address_details',
     'city',
     'region',
     'zip_code',
     'country',
-    'additional_address_details',
 )
 
 CONTACT_DETAILS_FIELDS = (
@@ -92,6 +92,11 @@ class IContactDetails(model.Schema):
         title=_(u'Street'),
     )
 
+    additional_address_details = schema.TextLine(
+        required=False,
+        title=_(u'Additional address details'),
+    )
+
     city = schema.TextLine(
         required=False,
         title=_(u'City/Town'),
@@ -110,11 +115,6 @@ class IContactDetails(model.Schema):
     country = schema.TextLine(
         required=False,
         title=_(u'Country'),
-    )
-
-    additional_address_details = schema.TextLine(
-        required=False,
-        title=_(u'Additional address details'),
     )
 
 alsoProvides(IContactDetails, IFormFieldProvider)
