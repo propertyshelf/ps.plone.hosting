@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<object name="portal_workflow" meta_type="Plone Workflow Tool">
+  <!-- Hosting Directory. -->
+  <!-- ================== -->
+  <property name="title">Contains workflow definitions for your portal</property>
+  <object name="hosting_directory_workflow" meta_type="Workflow" />
+  <bindings>
+    <type type_id="ps.plone.hosting.directory">
+      <bound-workflow workflow_id="hosting_directory_workflow" />
+    </type>
+  </bindings>
+
+  <!-- Customer. -->
+  <!-- ========= -->
+  <object name="customer_workflow" meta_type="Workflow" />
+  <bindings>
+    <type type_id="ps.plone.hosting.customer">
+      <bound-workflow workflow_id="customer_workflow" />
+    </type>
+  </bindings>
+
+  <!-- Domain. -->
+  <!-- ======= -->
+  <object name="domain_workflow" meta_type="Workflow" />
+  <bindings>
+    <type type_id="ps.plone.hosting.domain">
+      <bound-workflow workflow_id="domain_workflow" />
+    </type>
+  </bindings>
+
+  <!-- Hosting Service. -->
+  <!-- ================ -->
+  <object name="hosting_service_workflow" meta_type="Workflow" />
+  <bindings>
+    <type type_id="ps.plone.hosting.hosting">
+      <bound-workflow workflow_id="hosting_service_workflow" />
+    </type>
+  </bindings>
+
+</object>
