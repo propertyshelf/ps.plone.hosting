@@ -95,6 +95,7 @@ class IDomain(model.Schema):
         source=ObjPathSourceBinder(
             portal_type=[
                 'ps.plone.hosting.contact',
+                'ps.plone.hosting.customer',
             ],
         ),
         title=_(u'Owner-C'),
@@ -106,6 +107,7 @@ class IDomain(model.Schema):
         source=ObjPathSourceBinder(
             portal_type=[
                 'ps.plone.hosting.contact',
+                'ps.plone.hosting.customer',
             ],
         ),
         title=_(u'Admin-C'),
@@ -117,6 +119,7 @@ class IDomain(model.Schema):
         source=ObjPathSourceBinder(
             portal_type=[
                 'ps.plone.hosting.contact',
+                'ps.plone.hosting.customer',
             ],
         ),
         title=_(u'Tech-C'),
@@ -128,6 +131,7 @@ class IDomain(model.Schema):
         source=ObjPathSourceBinder(
             portal_type=[
                 'ps.plone.hosting.contact',
+                'ps.plone.hosting.customer',
             ],
         ),
         title=_(u'Zone-C'),
