@@ -7,15 +7,26 @@ import datetime
 # zope imports
 from plone.autoform import directives
 from plone.dexterity.content import Container
+from plone.formwidget.contenttree import ObjPathSourceBinder
 from plone.formwidget.datetime.z3cform import DateWidget
 from plone.formwidget.masterselect import MasterSelectBoolField
 from plone.supermodel import model
+from plone.supermodel.directives import fieldset
 from z3c.form.widget import FieldWidget
+from z3c.relationfield.schema import RelationChoice
 from zope import schema
 from zope.interface import implementer
 
 # local imports
 from ps.plone.hosting import _
+
+
+DOMAIN_CONTATCS_FIELDS = (
+    'owner_c',
+    'admin_c',
+    'tech_c',
+    'zone_c',
+)
 
 
 def DateFieldWidget(field, request):
@@ -30,6 +41,12 @@ def DateFieldWidget(field, request):
 
 class IDomain(model.Schema):
     """Interface for the `Domain` content type."""
+
+    fieldset(
+        'domain_contacts',
+        label=_(u'Domain Contacts'),
+        fields=DOMAIN_CONTATCS_FIELDS,
+    )
 
     title = schema.TextLine(
         required=True,
@@ -70,6 +87,50 @@ class IDomain(model.Schema):
     registration_date = schema.Date(
         required=True,
         title=_(u'Registration Date'),
+    )
+
+    owner_c = RelationChoice(
+        description=_(u'Domain owner.'),
+        required=False,
+        source=ObjPathSourceBinder(
+            portal_type=[
+                'ps.plone.hosting.contact',
+            ],
+        ),
+        title=_(u'Owner-C'),
+    )
+
+    admin_c = RelationChoice(
+        description=_(u'Domain admin.'),
+        required=False,
+        source=ObjPathSourceBinder(
+            portal_type=[
+                'ps.plone.hosting.contact',
+            ],
+        ),
+        title=_(u'Admin-C'),
+    )
+
+    tech_c = RelationChoice(
+        description=_(u'Technical domain contact.'),
+        required=False,
+        source=ObjPathSourceBinder(
+            portal_type=[
+                'ps.plone.hosting.contact',
+            ],
+        ),
+        title=_(u'Tech-C'),
+    )
+
+    zone_c = RelationChoice(
+        description=_(u'Zone domain contact.'),
+        required=False,
+        source=ObjPathSourceBinder(
+            portal_type=[
+                'ps.plone.hosting.contact',
+            ],
+        ),
+        title=_(u'Zone-C'),
     )
 
 
