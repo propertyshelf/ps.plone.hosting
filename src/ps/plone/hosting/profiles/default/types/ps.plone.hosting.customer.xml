@@ -37,6 +37,7 @@
   <!-- ================== -->
   <property name="behaviors">
     <element value="ps.plone.hosting.behaviors.IContactDetails" />
+    <element value="ps.plone.quickbooks.behaviors.IQuickbooks" />
     <element value="plone.app.content.interfaces.INameFromTitle" />
     <element value="plone.app.versioningbehavior.behaviors.IVersionable" />
   </property>
