@@ -5,7 +5,7 @@
              title="Domain Workflow"
              description=""
              state_variable="review_state"
-             initial_state="private"
+             initial_state="planned"
              i18n:attributes="title; description">
 
   <permission>Access contents information</permission>
@@ -13,8 +13,10 @@
   <permission>Modify portal content</permission>
   <permission>View</permission>
 
-  <state state_id="private" title="Private" i18n:attributes="title">
-    <description i18n:translate="">Can only be seen and edited by the owner.</description>
+  <state state_id="planned" title="Planned" i18n:attributes="title">
+    <description i18n:translate="">The domain is planned. The customer will not be chared.</description>
+    <exit-transition transition_id="register" />
+    <exit-transition transition_id="transfer_in" />
     <permission-map name="Access contents information" acquired="False">
       <permission-role>Manager</permission-role>
       <permission-role>Owner</permission-role>
@@ -45,6 +47,310 @@
     </permission-map>
   </state>
 
+  <state state_id="pending_transfer_in" title="Pending Transfer (incoming)" i18n:attributes="title">
+    <description i18n:translate="">The domain is currently in the transfer process.</description>
+    <exit-transition transition_id="approve" />
+    <exit-transition transition_id="reject" />
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="pending_transfer_out" title="Pending Transfer (outgoing)" i18n:attributes="title">
+    <description i18n:translate="">The domain is currently in the transfer process.</description>
+    <exit-transition transition_id="approve_transfer_out" />
+    <exit-transition transition_id="reject_transfer_out" />
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="pending_registration" title="Pending Registration" i18n:attributes="title">
+    <description i18n:translate="">The domain is currently in the registration process.</description>
+    <exit-transition transition_id="approve" />
+    <exit-transition transition_id="reject" />
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="registered" title="Registered" i18n:attributes="title">
+    <description i18n:translate="">The domain is registered. The customer will be chared.</description>
+    <exit-transition transition_id="cancel" />
+    <exit-transition transition_id="transfer_out" />
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <state state_id="cancelled" title="Cancelled" i18n:attributes="title">
+    <description i18n:translate="">The domain is cancelled. The customer will not be chared anymore.</description>
+    <exit-transition transition_id="register" />
+    <exit-transition transition_id="transfer_in" />
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <transition transition_id="transfer_in"
+      new_state="pending_transfer_in"
+      title="Start the incoming domain transfer."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Transfer the domain to our management.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=transfer_in"
+        category="workflow"
+        i18n:translate="">Start Incoming Transfer</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="transfer_out"
+      new_state="pending_transfer_out"
+      title="Start the outgoing domain transfer."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Transfer the domain to a new registrar.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=transfer_out"
+        category="workflow"
+        i18n:translate="">Start Outgoing Transfer</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="register"
+      new_state="pending_registration"
+      title="Start the domain registration process."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Register the domain.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=register"
+        category="workflow"
+        i18n:translate="">Start Registration</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="reject"
+      new_state="planned"
+      title="Reject the domain registration process."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Domain registration could not be finished.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=reject"
+        category="workflow"
+        i18n:translate="">Reject</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="reject_transfer_out"
+      new_state="registered"
+      title="Reject the outgoing domain transfer."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Domain outgoing domain transfer could not be finished.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=reject_transfer_out"
+        category="workflow"
+        i18n:translate="">Reject</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="approve"
+      new_state="registered"
+      title="Approve the domain registration."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">The domain registration was successful.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=approve"
+        category="workflow"
+        i18n:translate="">Approve</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="approve_transfer_in"
+      new_state="registered"
+      title="Approve the incoming domain transfer."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">The incoming domain transfer was successful.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=approve_transfer_in"
+        category="workflow"
+        i18n:translate="">Approve</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="approve_transfer_out"
+      new_state="cancelled"
+      title="Approve the outgoing domain transfer."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">The outgoing domain transfer was successful.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=approve_transfer_out"
+        category="workflow"
+        i18n:translate="">Approve</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="cancel"
+      new_state="cancelled"
+      title="Cancel the domain."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Cancel the domain.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=cancel"
+        category="workflow"
+        i18n:translate="">Cancel</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
 
   <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
     <description i18n:translate="">Previous transition</description>
