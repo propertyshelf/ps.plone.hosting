@@ -3,11 +3,15 @@
     color: red !important;
 }
 
-.state-planned {
+.state-planned,
+.state-pending_registration,
+.state-pending_transfer_in,
+.state-pending_transfer_out {
     color: #FFA500 !important;
 }
 
-.state-active {
+.state-active,
+.state-registered {
     color: #436976 !important;
 }
 
@@ -23,7 +27,10 @@
     color: #FFF !important;
 }
 
-.actionMenu .state-planned {
+.actionMenu .state-planned,
+.actionMenu .state-pending_registration,
+.actionMenu .state-pending_transfer_in,
+.actionMenu .state-pending_transfer_out {
     -webkit-border-radius: 0.5em;
     -moz-border-radius: 0.5em;
     border-radius: 0.5em;
@@ -34,7 +41,8 @@
     color: #FFF !important;
 }
 
-.actionMenu .state-active {
+.actionMenu .state-active,
+.actionMenu .state-registered {
     -webkit-border-radius: 0.5em;
     -moz-border-radius: 0.5em;
     border-radius: 0.5em;
