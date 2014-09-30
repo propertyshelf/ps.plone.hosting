@@ -13,8 +13,9 @@
   <permission>Modify portal content</permission>
   <permission>View</permission>
 
-  <state state_id="private" title="Private" i18n:attributes="title">
-    <description i18n:translate="">Can only be seen and edited by the owner.</description>
+  <state state_id="private" title="Inactive" i18n:attributes="title">
+    <description i18n:translate="">The customer is inactive and can not purchase any products or services.</description>
+    <exit-transition transition_id="activate"/>
     <permission-map name="Access contents information" acquired="False">
       <permission-role>Manager</permission-role>
       <permission-role>Owner</permission-role>
@@ -45,6 +46,68 @@
     </permission-map>
   </state>
 
+  <state state_id="active" title="Active" i18n:attributes="title">
+    <description i18n:translate="">The customer is active and can purchase products and services.</description>
+    <exit-transition transition_id="deactivate"/>
+    <permission-map name="Access contents information" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Change portal events" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="Modify portal content" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+    <permission-map name="View" acquired="False">
+      <permission-role>Manager</permission-role>
+      <permission-role>Owner</permission-role>
+      <permission-role>Editor</permission-role>
+      <permission-role>Reader</permission-role>
+      <permission-role>Contributor</permission-role>
+      <permission-role>Site Administrator</permission-role>
+    </permission-map>
+  </state>
+
+  <transition transition_id="activate"
+      new_state="active"
+      title="Customer is active"
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Activating a customer will allow the customer to purchase products and services.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=activate"
+        category="workflow"
+        i18n:translate="">Activate</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
+
+  <transition transition_id="deactivate"
+      new_state="private"
+      title="Customer is not an active customer anymore."
+      trigger="USER"
+      before_script="" after_script=""
+      i18n:attributes="title">
+    <description i18n:translate="">Deactivating a customer will not allow the customer to purchase any products or services any more.</description>
+    <action url="%(content_url)s/content_status_modify?workflow_action=deactivate"
+        category="workflow"
+        i18n:translate="">Deactivate</action>
+    <guard>
+      <guard-permission>Review portal content</guard-permission>
+    </guard>
+  </transition>
 
   <variable variable_id="action" for_catalog="False" for_status="True" update_always="True">
     <description i18n:translate="">Previous transition</description>
