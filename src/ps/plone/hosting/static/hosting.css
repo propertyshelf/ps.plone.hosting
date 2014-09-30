@@ -1,0 +1,46 @@
+.state-inactive,
+.state-cancelled {
+    color: red !important;
+}
+
+.state-planned {
+    color: #FFA500 !important;
+}
+
+.state-active {
+    color: #436976 !important;
+}
+
+.actionMenu .state-inactive,
+.actionMenu .state-cancelled {
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    padding: 0 0.5em;
+
+    background-color: red;
+    border: 0.1em solid red;
+    color: #FFF !important;
+}
+
+.actionMenu .state-planned {
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    padding: 0 0.5em;
+
+    background-color: #FFA500;
+    border: 0.1em solid #FFA500;
+    color: #FFF !important;
+}
+
+.actionMenu .state-active {
+    -webkit-border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
+    border-radius: 0.5em;
+    padding: 0 0.5em;
+
+    background-color: #436976;
+    border: 0.1em solid #436976;
+    color: #FFF !important;
+}
