@@ -39,6 +39,15 @@ def DateFieldWidget(field, request):
     return widget
 
 
+class IExternalDomain(model.Schema):
+    """Interface for the `External Domain` content type."""
+
+    title = schema.TextLine(
+        required=True,
+        title=_(u'Domain Name')
+    )
+
+
 class IDomain(model.Schema):
     """Interface for the `Domain` content type."""
 
@@ -51,12 +60,6 @@ class IDomain(model.Schema):
     title = schema.TextLine(
         required=True,
         title=_(u'Domain Name')
-    )
-
-    external_hosted = schema.Bool(
-        description=_(u'Is this domain hosted by another registrar?'),
-        required=False,
-        title=(u'External Hosted Domain'),
     )
 
     external_managed = MasterSelectBoolField(
@@ -136,6 +139,11 @@ class IDomain(model.Schema):
         ),
         title=_(u'Zone-C'),
     )
+
+
+@implementer(IExternalDomain)
+class ExternalDomain(Container):
+    """`External Domain` content type."""
 
 
 @implementer(IDomain)

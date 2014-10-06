@@ -74,6 +74,7 @@ class IHosting(model.Schema):
             source=ObjPathSourceBinder(
                 portal_type=[
                     'ps.plone.hosting.domain',
+                    'ps.plone.hosting.externaldomain',
                 ],
             ),
         ),
