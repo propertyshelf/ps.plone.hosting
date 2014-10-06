@@ -37,6 +37,15 @@
     </type>
   </bindings>
 
+  <!-- External Domain. -->
+  <!-- ================ -->
+  <object name="externaldomain_workflow" meta_type="Workflow" />
+  <bindings>
+    <type type_id="ps.plone.hosting.externaldomain">
+      <bound-workflow workflow_id="externaldomain_workflow" />
+    </type>
+  </bindings>
+
   <!-- Hosting Service. -->
   <!-- ================ -->
   <object name="hosting_service_workflow" meta_type="Workflow" />
