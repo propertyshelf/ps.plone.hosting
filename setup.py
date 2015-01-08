@@ -13,11 +13,11 @@ long_description = ('\n'.join([
 install_requires = [
     'setuptools',
     # -*- Extra requirements: -*-
+    'collective.z3cform.datetimewidget',
     'plone.api',
     'plone.app.dexterity',
     'plone.app.versioningbehavior',
     'plone.behavior',
-    'plone.formwidget.datetime',
     'plone.formwidget.masterselect',
     'ps.plone.quickbooks',
     'z3c.form',

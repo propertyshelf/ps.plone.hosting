@@ -1,14 +1,11 @@
 # -*- coding: utf-8 -*-
 """A `Domain`."""
 
-# python imports
-import datetime
-
 # zope imports
+from collective.z3cform.datetimewidget import DateWidget
 from plone.autoform import directives
 from plone.dexterity.content import Container
 from plone.formwidget.contenttree import ObjPathSourceBinder
-from plone.formwidget.datetime.z3cform import DateWidget
 from plone.formwidget.masterselect import MasterSelectBoolField
 from plone.supermodel import model
 from plone.supermodel.directives import fieldset
@@ -32,10 +29,8 @@ DOMAIN_CONTATCS_FIELDS = (
 def DateFieldWidget(field, request):
     """IFieldWidget factory for DatetimeWidget."""
     widget = FieldWidget(field, DateWidget(request))
-    currentYear = datetime.date.today().year
-    # Don't display dates before 1985 (first domain registration).
-    minimumYearRange = currentYear - 1985
-    widget.years_range = (-minimumYearRange, 1)
+    widget.show_jquerytools_dateinput = True
+    widget.show_today_link = True
     return widget
 
 
